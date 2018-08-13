@@ -1,0 +1,53 @@
+<h1>My custom Streaming platform</h1>
+
+<div class="main-video">
+  <div class="video-container">
+    <vg-player>
+        <div class="video-block">
+            <vg-controls>
+                <vg-play-pause vgFor="leftVideo"></vg-play-pause>
+
+                <vg-scrub-bar vgFor="leftVideo">
+                    <vg-scrub-bar-current-time vgFor="leftVideo"></vg-scrub-bar-current-time>
+                    <vg-scrub-bar-buffering-time vgFor="leftVideo"></vg-scrub-bar-buffering-time>
+                </vg-scrub-bar>
+
+                <vg-time-display vgvgProperty="left" vgvgFormat="mm:ss"></vg-time-display>
+
+                <vg-mute vgFor="leftVideo"></vg-mute>
+
+                <vg-fullscreen vgFor="leftVideo"></vg-fullscreen>
+            </vg-controls>
+
+            <video [vgMedia]="left" #left id="leftVideo" preload="auto">
+                <source src="http://localhost:21346/api/streaming/nature1" type="video/mp4">
+            </video>
+        </div>
+    </vg-player>
+  </div>
+
+  <div class="video-container">
+      <vg-player>
+          <div class="video-block">
+              <vg-controls>
+                  <vg-play-pause vgFor="rightVideo"></vg-play-pause>
+    
+                  <vg-scrub-bar vgFor="rightVideo">
+                      <vg-scrub-bar-current-time vgFor="rightVideo"></vg-scrub-bar-current-time>
+                      <vg-scrub-bar-buffering-time vgFor="rightVideo"></vg-scrub-bar-buffering-time>
+                  </vg-scrub-bar>
+    
+                  <vg-time-display vgvgProperty="left" vgvgFormat="mm:ss"></vg-time-display>
+    
+                  <vg-mute vgFor="rightVideo"></vg-mute>
+    
+                  <vg-fullscreen vgFor="leftVideo"></vg-fullscreen>
+              </vg-controls>
+    
+              <video [vgMedia]="rightVideo" #rightVideo id="rightVideo" preload="auto">
+                  <source src="http://localhost:21346/api/streaming/nature2" type="video/mp4">
+              </video>
+          </div>
+      </vg-player>
+    </div>
+</div>
